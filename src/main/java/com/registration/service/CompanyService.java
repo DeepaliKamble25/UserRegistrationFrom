@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CompanyService {
 
-    CompanyDto createCompanydata(CompanyDto companyDto);
+    CompanyDto createCompanydata(Long userId,CompanyDto companyDto);
 
-    CompanyDto updateRecordCompany(Long userId,Long companyId);
+    CompanyDto updateRecordCompany(Long userId,Long companyId,CompanyDto companyDto);
 
     void deleteCompanydetailByUserDto(Long userId,Long companyId);
 
