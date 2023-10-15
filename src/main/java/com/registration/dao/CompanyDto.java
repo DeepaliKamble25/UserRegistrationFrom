@@ -15,6 +15,7 @@ public class CompanyDto {
 
     private Long companyId;
 
+    private String companyName;
     private Date dateOfJoining;
 
     private Date dateOfExits;
