@@ -4,21 +4,24 @@ import com.registration.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 
 
-    User findByEmail(String email);
+    Optional< User> findByEmail(String email);
 
-    User findByName(String name);
+    Optional< User> findByName(String name);
 
-    User findByCountry(String country);
+  List<User> findByCountry(String country);
 
-    User findByState(String state);
+    List<User> findByState(String state);
 
-    User findByPanAndAadhar(String pan, String aadhar);
+    Optional< User> findByPanAndAadhar(String pan, String aadhar);
 
-    User findBymobile(Integer mobile);
+    Optional< User> findByMobile(Long mobile);
 
 
 
