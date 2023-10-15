@@ -1,11 +1,11 @@
 package com.registration.entities;
 
 import lombok.*;
-import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
-
+@Entity
+@Table(name = "companys")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -13,8 +13,11 @@ import java.util.List;
 @Builder
 public class Company {
 
-    private User username;
-    private String companyId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long companyId;
+
+    private String companyName;
 
     private Date dateOfJoining;
 
@@ -23,13 +26,6 @@ public class Company {
     private String achievement;
 
     private Integer ctc;
-
-    private List<MultipartFile> file;
-    private User userNameUser;
-
-
-
-
-
-
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private User userId;
 }
